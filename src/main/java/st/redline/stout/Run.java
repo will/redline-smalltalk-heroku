@@ -29,7 +29,7 @@ public class Run extends Stic {
     }
 
     static void startServer(String[] args) throws Exception {
-        server = new Server(8080);
+        server = new Server(Integer.valueOf(System.getenv("PORT")));
         server.setHandler(initialHandler(args));
         server.start();
         server.join();
